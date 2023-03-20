@@ -1,0 +1,255 @@
+@font-face {
+    font-family: 'Ralway';
+    font-style: normal;
+    font-weight: 100 900;
+    src: url("../fonts/ralway/Raleway-VariableFont_wght.ttf");
+}
+
+:root {
+    --dark-100: 175 100% 5%;
+
+    --blue-100: 200 100% 20%;
+    --blue-200: 200 100% 30%;
+    --blue-300: 200 100% 50%;
+    --blue-400: 200 100% 86%;
+    --blue-500: 200 100% 95%;
+
+    --orange-100: 35 80% 20%;
+    --orange-200: 35 80% 30%;
+    --orange-300: 35 80% 50%;
+    --orange-400: 35 80% 85%;
+    --orange-500: 35 80% 95%;
+}
+
+header {
+    font-family: 'Ralway';
+    color: hsl(var(--blue-100));
+    background-color: hsl(var(--blue-500));
+
+    text-align: center;
+}
+
+.body_grid {
+    padding: 1rem;
+
+    font-family: 'Ralway';
+    color: hsl(var(--orange-300));
+    background-color: hsl(var(--blue-500));
+}
+
+.body_grid-cell {
+    width: 256px;
+    height: 256px;
+
+    align-self: center;
+    justify-self: center;
+
+    padding: .5rem;
+
+    float: left;
+}
+
+.body_grid-subgrid {
+    width: 35rem;
+
+    background-image: url(../img/kaleidoscope-bg.png);
+    background-repeat: round;
+    background-color: hsl(180, 10%, 10%);
+
+    float: left;
+}
+
+.body_grid-subgrid-cell {
+    align-self: center;
+    justify-self: center;
+}
+
+.body_grid-subgrid-cell:nth-child(1) {}
+
+.body_grid-subgrid-cell:nth-child(2) {
+    transform: rotateZ(90deg);
+}
+
+.body_grid-subgrid-cell:nth-child(3) {
+    transform: scale(-1);
+}
+
+.body_grid-subgrid-cell:nth-child(4) {
+    transform: rotateZ(-90deg);
+}
+
+.body_grid-subgrid-cell:nth-child(5) {
+    border: 1px solid hsl(var(--blue-100));
+    border-radius: 20px;
+
+    width: 70%;
+    height: 70%;
+
+    background-image: url(../img/kaleidoscope-bg.png);
+}
+
+
+
+.body_grid-cell:nth-child(1) {
+    width: 50%;
+}
+
+.body_grid-cell:nth-child(2) {
+    width: 50%;
+    height: 100%;
+
+    direction: rtl;
+
+    font-size: 16pt;
+    color: hsl(var(--orange-400));
+    font-weight: bold;
+
+    border-radius: 25px;
+
+    background-color: hsl(var(--blue-200));
+}
+
+.body_grid-cell:nth-child(3) {
+    border-radius: 25px;
+    color: hsl(var(--blue-100));
+
+    width: 50%;
+
+    background-color: hsl(var(--blue-400));
+}
+
+.body_grid-cell:nth-child(4) {
+    width: 50%;
+    height: 100%;
+    border-radius: 25px;
+
+    background-color: hsl(var(--blue-400));
+}
+
+.body_grid-cell:nth-child(5) {
+    border-radius: 25px;
+}
+
+.body_grid-cell:nth-child(6) {
+    font-size: 12pt;
+}
+
+.body_grid-cell:nth-child(7) {
+    transform: rotateZ(90deg);
+
+    color: hsl(var(--orange-400));
+    font-size: 16pt;
+
+    border-radius: 0px 25px 25px 0px;
+
+    background-color: hsl(var(--blue-300));
+}
+
+.body_grid-cell:nth-child(8) {
+    grid-column: 2/3;
+    grid-row: 3/4;
+
+    direction: rtl;
+
+    font-size: 12pt;
+    color: hsl(var(--orange-400));
+
+    border-radius: 25px 25px 0px 0px;
+
+    background-color: hsl(var(--blue-300));
+}
+
+.body_grid-cell:nth-child(9) {
+    background-color: hsl(var(--blue-300));
+}
+
+.body_grid-cell:nth-child(10) {
+    color: hsl(var(--blue-100));
+
+    border-radius: 0px 0px 25px 25px;
+}
+
+@supports (display: grid) {
+    .body_grid {
+        display: grid;
+
+        grid-template-columns: auto;
+
+        padding: 1rem;
+
+        font-family: 'Ralway';
+        color: hsl(var(--orange-300));
+        background-color: hsl(var(--blue-500));
+    }
+
+    .body_grid-cell:nth-child(1) {
+        width: 100%;
+    }
+
+    .body_grid-cell:nth-child(2) {
+        width: 100%;
+        height: 100%;
+
+        direction: rtl;
+
+        font-size: 16pt;
+        color: hsl(var(--orange-400));
+        font-weight: bold;
+
+        border-radius: 25px;
+
+        background-color: hsl(var(--blue-200));
+    }
+
+    .body_grid-subgrid {
+        width: 35rem;
+
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        background-image: url(../img/kaleidoscope-bg.png);
+        background-repeat: round;
+        background-color: hsl(180, 10%, 10%);
+    }
+
+    .body_grid-subgrid-cell {
+        align-self: center;
+        justify-self: center;
+    }
+
+    .body_grid-subgrid-cell:nth-child(1) {
+        grid-column: 2/3;
+    }
+
+    .body_grid-subgrid-cell:nth-child(2) {
+        transform: rotateZ(90deg);
+        grid-column: 3/4;
+        grid-row: 2/3;
+    }
+
+    .body_grid-subgrid-cell:nth-child(3) {
+        transform: scale(-1);
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
+
+    .body_grid-subgrid-cell:nth-child(4) {
+        transform: rotateZ(-90deg);
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    .body_grid-subgrid-cell:nth-child(5) {
+        border: 1px solid hsl(var(--blue-100));
+        border-radius: 20px;
+
+        width: 70%;
+        height: 70%;
+
+        background-image: url(../img/kaleidoscope-bg.png);
+
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+}
